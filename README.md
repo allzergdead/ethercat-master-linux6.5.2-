@@ -1,3 +1,24 @@
+/*
+*  该代码内容修改自IGH 1.6版本，主要修改项:
+*  1.master.c 新增绑定master驱动到3号核心，同时在grub中将3号核心隔离出来以获取更好的性能，同时可以配合修改kernel中的hrtimer，指定2好核心直接在硬中断中执行下文可以进一步提高性能（该功能非通用，当前代码已屏蔽，需要的可以去打开）
+*  2.适配了6.5.2版本内核的 r8169 , e100e , igb ,igc 实时网卡驱动
+*  3.编写了对应的PLCOpen运动运动控制主站代码，可以控制伺服做大部份常规运动控制功能，该代码由于和我自行编写的非开源激光模块深度绑定正在拆分中，需要等到10月左右开源
+*  联系方式：
+*  bilibili ：邪饿饿之麻薯薯
+*  偶尔直播，邮箱等联系方式因为工作比较忙，暂时不公开，有交流需求可以到bilibili资讯
+*
+*
+*  Translated by GPT:
+*
+*  The content of this code is modified from IGH version 1.6, with the main modifications as follows:
+*  1. Added binding of the master driver to core 3 in master.c, while isolating core 3 in grub for better performance. It can also cooperate with modifications in the kernel's hrtimer, designating core 2 to directly execute the following content in the hard interrupt, which can further improve performance (this feature is not general, the current code is disabled, and can be enabled if needed).
+*  2. Adapted real-time network card drivers for kernel version 6.5.2, including r8169, e100e, igb, and igc.
+*  3. Developed the corresponding PLCOpen motion control master station code, capable of controlling servos to perform most conventional motion control functions. This code is deeply bound to my self-developed non-open-source laser module and is currently being separated. It is expected to be open-sourced around October.
+*  Contact information:
+*  bilibili: 邪饿饿之麻薯薯
+*  Occasional live streams. Email and other contact information are not disclosed due to busy work schedules. For communication needs, you can reach out on bilibili.
+*
+*/
 This is the README file of the IgH EtherCAT Master.
 
 Contents:
